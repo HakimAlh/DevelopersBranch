@@ -7,7 +7,6 @@ const signUp = (req, res) => {
 }
 
 const addUser = async (req, res) => {
-    console.log('request body: ', req.body)
     const userInDatabase = await User.findOne({ username: req.body.username})
     if (userInDatabase) {
         return res.render('auth/sign-up.ejs',{

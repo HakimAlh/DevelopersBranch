@@ -1,12 +1,27 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
+
+
 body {
-    background-color: rgb(255, 182, 219);
     margin: 0px;
     text-align: center;
     /* display: flex;
     flex-direction: column;
     align-items: center; */
-}
+    font-family: "Jersey 25", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-image: url("/images/Background2.jpg");
+    background-size: cover;
+    color: white;
 
+}
+.jersey-25-regular {
+    font-family: "Jersey 25", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
 form {
     display:flex;
     flex-direction:column;
@@ -21,3 +36,98 @@ form button {
     flex-direction: column;
     align-items: center;
 }
+#Title {
+padding-top: 20px;
+font-size: 90px;
+-webkit-text-stroke: 1px rgb(39, 0, 182);
+}
+#Subtitle {
+    -webkit-text-stroke: 0.5px rgb(39, 0, 182);
+}
+nav {
+    display: flex;
+    border-radius: 50px;
+    margin: 20px;
+    color: white;
+
+}
+
+#TitleUser {
+    padding-top: 30px;
+    font-size: 75px;
+    color:rgb(39, 0, 182);
+    -webkit-text-stroke: 2px rgb(37, 37, 255);
+    }
+
+    .navbar-brand:hover {
+        transition: all 5s;
+    }
+
+    input {
+        border-radius: 20px;
+    }
+    button {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        margin-top: 45px;
+        margin-bottom: 50px;
+        border-radius: 50px;    
+    }
+    #SignIn {
+        display: flex;
+        justify-content: center;
+        font-size: 45px;
+        padding: 10px;
+        margin-top: 30px;
+        border-radius: 50px;
+    }
+
+    #Register {
+        display: flex;
+        justify-content: center;
+        font-size: 45px;
+        padding: 10px;
+        margin-top: 30px;
+        text-decoration: none !important;
+    }
+
+    #Form {
+        display: flex;
+        justify-content: center;
+        font-size: 45px;
+        padding: 10px;
+        align-items: center;
+
+        border-radius: 50px;
+    }
+    
+    .Description {
+        margin-top: 35px;
+        font-size: 20px;
+        font-style: italic;
+        background-blend-mode: rgb(255, 0, 0) overlay;
+    }
+
+    .container {
+        font-size: 25px;
+    }
+   
+        .card { 
+           border-color: beige;
+        }
+
+        #Signinto {
+            margin-top: 60px;
+            font-size: 85px;
+            -webkit-text-stroke: 1px rgb(37, 37, 255);   
+        }
+        #Registerinto {
+            margin-top: 60px;
+            font-size: 85px;
+            -webkit-text-stroke: 1px rgb(37, 37, 255);   
+        }
+
+        #AddPost {
+            -webkit-text-stroke: 1px rgb(37, 37, 255); 
+        }

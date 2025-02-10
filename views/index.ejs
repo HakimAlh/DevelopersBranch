@@ -1,11 +1,33 @@
 <%- include('partials/head') %>
 
 <% if (user) { %>
+  <h4>Welcome back, <%= user.username %>!</h4>
+  <h1 id="Title">DevsBranch</h1>
+  <h5 id="Subtitle"> "Talk is cheap. Show me the code" - Linus Torvalds</h5>
+  
+  <% } else { %>
+        <h1 id="Title">DevsBranch</h1>
+        <h5 id="Subtitle"> "Talk is cheap. Show me the code" - Linus Torvalds</h5>
+            <div id="Form">
+                <form id = "SignIn" action="/auth/sign-in">
+                    <input type="submit" value="Sign-In"></button>
+                </form>
 
-    <h1>Welcome to the App! <%= user.username %>!</h1>
-    <% } else { %>
-        <h1> Welcome to the App guest.</h1>
+   
+                <form id = "Register" action="/auth/sign-up">
+                    <input type="submit" value="Register"></button>
+                </form>
+            </div>
+              </div>
+              <h5 class = "Description">DevelopersBranch is a community-driven forum for developers or even non-developers to share thoughts about development and coding.
+                A place where you can talk or ask questions related to coding languages.
+                Problems that others may face to be the same as yours! 
+                It can be a place for solution or a place to share your amazing development!
+              </h5>
+
+        
     <% } %>
+    
 
 
     <%- include('partials/footer') %>

@@ -23,6 +23,7 @@ mongoose.connection.on('connected', () => {
 })
 
 // MIDDLEWARE
+app.use(morgan('dev'))
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, "public")));
 app.use(session({
@@ -44,6 +45,7 @@ app.use(passUserToView)
 //CONTROLLERS
 const pagesCtrl = require('./controllers/pages')
 const authCtrl = require('./controllers/auth')
+const postCtrl = require('./controllers/post')
 
 
 //ROUTE HANDLERS
@@ -53,6 +55,16 @@ app.post('/auth/sign-up', authCtrl.addUser)
 app.get('/auth/sign-in', authCtrl.signInForm)
 app.post('/auth/sign-in', authCtrl.signIn)
 app.get('/auth/sign-out', authCtrl.signOut)
+app.get('/views/index.ejs', postCtrl.main)
+app.get('/views/home.ejs', postCtrl.homePage)
+app.get('/posts/new.ejs', postCtrl.posting)
+app.use(isSignedIn)
+app.get('/posts/view.ejs', postCtrl.postList)
+app.post('/posts', postCtrl.postAdd)
+
+
+
+
 
 app.listen(port, () => {
     console.log(`The express app is ready on port ${port}`)

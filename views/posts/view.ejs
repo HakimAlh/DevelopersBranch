@@ -1,0 +1,12 @@
+<%- include('../partials/head') %>
+
+<h1> Your Posts </h1>
+
+<ul>
+    <% postings.forEach((posting) => { %>
+    <li>
+ <%= posting.text%> owned by <%= posting.owner.username%>.
+    </li>
+    <% }) %>
+  </ul>
+<%- include('../partials/footer') %>

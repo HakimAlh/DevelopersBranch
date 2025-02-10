@@ -1,0 +1,32 @@
+<%- include('../partials/head') %>
+
+<h1 id="newPost">Add a new Post</h1>
+
+<div class="container">
+<form action="/posts" method="POST">
+
+    <label for="">Post: </label>
+    <textarea id="text" name="text">
+        </textarea>
+    <label for="category">Category:</label>
+    <select name="category" id="category">
+        <option value="Disabled">-</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="CSS">CSS</option>
+        <option value="HTML">HTML</option>
+        <option value="Embedded JavaScript (EJS)">Embedded JavaScript (EJS)</option>
+        <option value="Python">Python</option>
+        <option value="Java">Java</option>
+        <option value="Any">Any</option>
+    </select>
+    <!-- <select name="category2" id="category2" form="categoryform2">
+        <option value="Disabled">-</option>
+        <option value="Question">Question</option>
+        <option value="Help Needed">Help Needed</option>
+        <option value="Sharing">Sharing</option>
+       </select> -->
+    <button type="submit">Post</button>
+</form>
+</div>
+
+<%- include('../partials/footer') %>
