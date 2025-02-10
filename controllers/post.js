@@ -46,19 +46,12 @@ const posting = (req, res) => {
         title: 'DevsBranch: Add Post'
     })
 }
-const main = (req, res) => {
-    res.render('../views/index.ejs', {
-        title: 'DevsBranch: Main'
-    })
-}
+// const main = (req, res) => {
+//     res.render('../views/index.ejs', {
+//         title: 'DevsBranch: Main'
+//     })
+// }
 
-const homePage = (req, res) => {
-    res.render('/views/home.ejs', {
-        title: 'DevsBranch: Homepage'
-    }
-
-    )
-}
 
 
 // const postList = async (req, res) => {
@@ -75,23 +68,74 @@ const postList = async (req, res) => {
         postings
     })
 }
-    // try {
-    // const postings = await Post.find({});
-    // console.log(postings)
+const detail = async (req, res) => {
+    try {
+        console.log('Detail: ', req.params.postingId)
+        const posting = await Post.findById(req.params.postingId).populate('owner')
+        console.log(posting)
+        
+        res.render('./posts/detailedview.ejs', {
+            title: 'DevsBranch: Post',
+            posting
+        })
+        
 
-    // res.render('posts/view.ejs', {
-    //     postings
-    // })
-    // } catch (error) {
-    // console.log(error)
-    // res.redirect('/')
-    // }
-   
+    } catch (error) {
+        console.log(error)
+        res.redirect('/')
+    }
 
+}
+
+const abouthakim = (req, res) => {
+    res.render('../views/aboutHakim.ejs', {
+        title: 'DevsBranch: About Hakim'
+    })
+}
+
+const homepage = (req, res) => {
+    res.render('../views/home.ejs', {
+        title: 'DevsBranch: Main'
+    })
+}
+
+const about = (req, res) => {
+    res.render('./views/about.ejs', {
+        title: 'DevsBranch: About'
+    })
+}
+
+const faq = (req, res) => {
+    res.render('/views/faq.ejs', {
+        title: 'DevsBranch: FAQ'
+    })
+}
+
+const deletePost= async (req, res) => {
+    try {
+        const posting = await Post.findById(req.params.postingId)
+        
+        if (posting.owner.equals(req.params.userId)) {
+            await posting.deleteOne()
+            res.redirect('/posts')
+        } else {
+            res.send("You don't have permission to do that.")
+        }
+
+    } catch (error) {
+        console.log(error)
+        res.redirect('/')
+    }
+}
 module.exports = {
     postAdd,
     posting,
-    main,
-    homePage,
+    // main,
+    homepage,
     postList,
+    detail,
+    abouthakim,
+    about,
+    faq,
+    deletePost,
 }

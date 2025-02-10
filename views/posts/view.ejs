@@ -4,7 +4,7 @@
 <% postings.forEach((posting) => { %>
 <div class="card mt-2" style="width: 18rem;">
                     <div class="card-body">
-                        <%= posting.owner %>.
+                        <%= posting.owner %>. Tag: <%= posting.category %>
                       <h5 class="card-title">$<%= posting.text %></h5>
                       <a href="/posts/<%= posting._id %>">View Details</a>
                     </div>

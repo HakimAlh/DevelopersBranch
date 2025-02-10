@@ -22,7 +22,7 @@
                   <a class="nav-link" href="#"><%= user.username %></a>
                 </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/views/home.ejs'">Home</a>
+                <a class="nav-link active" aria-current="page" href="/views/home.ejs">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/posts/new.ejs">Add Post</a>
@@ -36,7 +36,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Profile</a></li>
-                  <li><a class="dropdown-item" href="#">FAQ</a></li>
+                  <li><a class="dropdown-item" href="/views/faq.ejs">FAQ</a></li>
                   <li><a class="dropdown-item" href="/auth/sign-out">Sign-Out</a></li>
                 </ul>
               </li>
@@ -44,18 +44,16 @@
           <% } else { %>
             
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Visit Forum</a>
+              <a class="nav-link active" aria-current="page" href="/views/home.ejs">Visit Forum</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 More
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">FAQ</a></li>
-                <li><a class="dropdown-item" href="#">About</a></li>
+                <li><a class="dropdown-item" href="/views/faq.ejs">FAQ</a></li>
+                <li><a class="dropdown-item" href="/views/about.ejs">About</a></li>
+                <li><a class="dropdown-item" href="/posts/aboutHakim.ejs">About Hakim</a></li>
               </ul>
             </li>
           </ul>

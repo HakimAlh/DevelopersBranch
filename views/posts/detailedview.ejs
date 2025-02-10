@@ -1,0 +1,18 @@
+<%- include('../partials/head') %>
+
+<h1> Your Posts </h1>
+<div class="card mt-2" style="width: 18rem;">
+                    <div class="card-body">
+                        <!-- <%= posting.owner %>. Tag: <%= posting.category %> -->
+                      <h5 class="card-title"><%= posting.text %></h5>
+                      <% if (posting.owner._id.equals(user._id)) { %>
+                        <form action="/posts/<%= user._id %>/<%= posting._id %>?_method=DELETE" method="POST">
+                           <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                        <a href="/posts/<%= user._id %>/<%= posting._id %>/edit">Edit</a>
+                      <% } %>
+                      
+                    </div>
+                  </div>
+
+<%- include('../partials/footer') %>
