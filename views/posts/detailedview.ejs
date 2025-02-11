@@ -1,7 +1,8 @@
 <%- include('../partials/head') %>
 
 
-<h1> Your Posts </h1>
+<h1> <%= posting.owner.username %>'s Post </h1>
+<h1 id= Comment>Comments</h1>
   <div class="div-con2">
 
     <div class="card mt-2_" style="width: 18rem;">
@@ -15,9 +16,27 @@
                             <form action="/posts/<%= user._id %>/<%= posting._id %>?_method=DELETE" method="POST">
                                <button id="Delete" type="submit" class="btn btn-danger">Delete</button>
                             </form>
+                              <% } else { %>
                             <% } %>
                         </div>
                       </div>
+                      <style>
+                        .square {
+                          height: 30vw;
+                          width: 25vw;
+                          background-color: white;
+                          border: solid rgb(102, 102, 102);
+                        }
+                        </style>
+                      <form action="/posts" method="POST">
+                        <div class="square">
+                          <textarea id="Comment_" name="comment">
+                            
+                          </textarea>
+                          <button id="PostBtn" type="submit">Send</button>
+                      </form>
+                      </div>
+                 
   </div>
 
 <%- include('../partials/footer') %>

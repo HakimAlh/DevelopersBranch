@@ -1,6 +1,16 @@
 const mongoose = require('mongoose')
 
+const commentSchema = new mongoose.Schema({
+    owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
 
+    }, 
+    comment: { 
+        type: String,
+        required: true,
+    },
+})
 const postSchema = new mongoose.Schema({
     owner: {
         type: mongoose.Schema.Types.ObjectId,
@@ -24,4 +34,6 @@ const postSchema = new mongoose.Schema({
 
 const Post = mongoose.model('Post', postSchema)
 
-module.exports = Post
+const Comment = mongoose.model('Comment', commentSchema)
+
+module.exports = Post, Comment

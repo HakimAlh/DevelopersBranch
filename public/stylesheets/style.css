@@ -180,8 +180,8 @@ nav {
             width: 80px;
         }
 
-        #Edit {
-        }
+        /* #Edit {
+        } */
 
         .card mt-2_ {
             width: 20px;
@@ -190,4 +190,18 @@ nav {
         .div-con2 {
             display: flex;
             justify-content: center;
+        }
+        #Comment {
+            text-align: right;
+            margin-right: 125px;
+        }
+
+        #Comment_ {
+            margin-top: 330px; 
+            margin-left: 25px;  
+        }
+        #PostBtn {
+            margin-top: -60px;
+            margin-left: 10px; 
+            margin-left: 15px;  
         }
