@@ -22,10 +22,9 @@ const Post = require('../models/post')
 // }
 const postAdd = async (req, res) => {
     req.body.owner = req.session.user._id
-    console.log(req.body.owner)
+    // console.log(req.body.owner)
     const newPost = await Post.create(req.body)
-    console.log('hi')
-    console.log(newPost)
+    // console.log(newPost)
     res.redirect('/posts/view.ejs')
 
     // try {
@@ -60,8 +59,7 @@ const posting = (req, res) => {
 //         })}
 
 const postList = async (req, res) => {
-    const postings = await Post.find()
-    console.log(postings)
+    const postings = await Post.find().populate('owner')
 
     res.render('./posts/view.ejs', {
         title: 'DevsBranch: Add Post',
@@ -72,7 +70,8 @@ const detail = async (req, res) => {
     try {
         console.log('Detail: ', req.params.postingId)
         const posting = await Post.findById(req.params.postingId).populate('owner')
-        console.log(posting)
+        // console.log('Hi!')
+        // console.log(posting)
         
         res.render('./posts/detailedview.ejs', {
             title: 'DevsBranch: Post',
@@ -114,10 +113,10 @@ const faq = (req, res) => {
 const deletePost = async (req, res) => {
     try {
         const posting = await Post.findById(req.params.postingId)
-        
+        console.log(posting)
         if (posting.owner.equals(req.params.userId)) {
             await posting.deleteOne()
-            res.redirect('/posts')
+            res.redirect('/posts/view.ejs')
         } else {
             res.send("You don't have permission to do that.")
         }
@@ -127,6 +126,7 @@ const deletePost = async (req, res) => {
         res.redirect('/')
     }
 }
+
 
 const editPost = async (req, res) => {
     try {

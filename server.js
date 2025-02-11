@@ -24,6 +24,7 @@ mongoose.connection.on('connected', () => {
 
 // MIDDLEWARE
 app.use(morgan('dev'))
+app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, "public")));
 app.use(session({
@@ -58,15 +59,16 @@ app.get('/auth/sign-out', authCtrl.signOut)
 app.get('/views/home', postCtrl.homepage)
 app.get('/posts/new', postCtrl.posting)
 app.get('/posts/aboutHakim', postCtrl.abouthakim)
-app.get('/posts/about.ejs', postCtrl.about)
-app.get('/posts/faq.ejs', postCtrl.faq)
+app.get('/posts/about', postCtrl.about)
+app.get('/posts/faq', postCtrl.faq)
 app.use(isSignedIn)
-app.get('/posts/view.ejs', postCtrl.postList)
-app.delete('/posts/:userId/:postingId', postCtrl.deletePost)
+app.get('/posts/view', postCtrl.postList)
 app.post('/posts', postCtrl.postAdd)
 app.get('/posts/:postingId', postCtrl.detail)
+app.delete('/posts/:userId/:postingId', postCtrl.deletePost)
 app.get('/posts/:userId/:postingId/edit', postCtrl.editPost)
-app.post('/posts/:userId/:postingId', postCtrl.updatePost)
+app.post('/posts/:userId/:postingId/edit', postCtrl.editPost)
+app.put('/posts/:userId/:postingId', postCtrl.updatePost)
 
 
 

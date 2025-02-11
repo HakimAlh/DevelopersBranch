@@ -114,8 +114,18 @@ nav {
     }
    
         .card { 
+            display: flex;
+            justify-content: center;
            border-color: beige;
+           width: 100vw;
         }
+        .card-body { 
+            display: flex;
+            justify-content: center;
+            width: 100vw;
+            align-items: center;
+         }
+ 
 
         #Signinto {
             margin-top: 60px;
