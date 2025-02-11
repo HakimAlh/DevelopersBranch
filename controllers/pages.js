@@ -1,5 +1,5 @@
 const home = (req, res) => {
-    res.render('index.ejs' , {title: 'DevelopersBranch'})
+    res.render('index.ejs' , {title: 'DevsBranch'})
 }
 
 module.exports = {

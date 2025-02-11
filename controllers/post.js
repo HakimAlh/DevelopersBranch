@@ -111,7 +111,7 @@ const faq = (req, res) => {
     })
 }
 
-const deletePost= async (req, res) => {
+const deletePost = async (req, res) => {
     try {
         const posting = await Post.findById(req.params.postingId)
         
@@ -127,6 +127,40 @@ const deletePost= async (req, res) => {
         res.redirect('/')
     }
 }
+
+const editPost = async (req, res) => {
+    try {
+        const posting = await Post.findById(req.params.postingId).populate('owner')
+         if(posting.owner.equals(req.params.userId)) {
+
+         
+        res.render('./posts/edit.ejs', {
+            title: 'Edit Post',
+            posting
+        })
+     } else {
+        res.send("You don't have permission to do that.")
+     }
+    } catch {
+        console.log(error)
+        res.redirect('/')
+    }
+}
+
+const updatePost = async (req, res) => {
+    try {
+        const posting = await Post.findByIdAndUpdate(
+        req.params.postingId,
+        req.body,
+        { new: true}
+        )
+        res.redirect(`/posts/${posting._id}`)
+    } catch (error) {
+        console.log(error)
+        res.redirect('/')
+    }
+}
+
 module.exports = {
     postAdd,
     posting,
@@ -138,4 +172,6 @@ module.exports = {
     about,
     faq,
     deletePost,
+    editPost,
+    updatePost
 }
