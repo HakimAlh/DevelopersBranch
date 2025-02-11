@@ -1,19 +1,25 @@
 <%- include('../partials/head') %>
 
+
 <h1> Your Posts </h1>
-<div class="card mt-2" style="width: 18rem;">
-                    <div class="card-body">
-                        <!-- <%= posting.owner %>. Tag: <%= posting.category %> -->
-                      <h5 class="card-title"><%= posting.text %></h5>
-                      <h5 class="card-title"><%= posting.category %></h5>
-                      <% if (posting.owner._id.equals(user._id)) { %>
-                        <form action="/posts/<%= user._id %>/<%= posting._id %>?_method=DELETE" method="POST">
-                           <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
-                        <a href="/posts/<%= user._id %>/<%= posting._id %>/edit">Edit</a>
-                      <% } %>
-                      
-                    </div>
-                  </div>
+  <div class="div-con2">
+
+    <div class="card mt-2_" style="width: 18rem;">
+                        <div class="card-body">
+                          <%= posting.owner.username %>: 
+                          <%= posting.title %>
+                          <h5 id="Category_"> Tag: <%= posting.category %></h5>
+                          <h5 class="card-title"><%= posting.text %></h5>
+                          <% if (posting.owner._id.equals(user._id)) { %>
+                            <a id="Edit" href="/posts/<%= user._id %>/<%= posting._id %>/edit"><button id="editBtn" type="submit">Edit</button></a>
+                            <form action="/posts/<%= user._id %>/<%= posting._id %>?_method=DELETE" method="POST">
+                               <button id="Delete" type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                            <% } %>
+                        </div>
+                      </div>
+  </div>
 
 <%- include('../partials/footer') %>
+
+

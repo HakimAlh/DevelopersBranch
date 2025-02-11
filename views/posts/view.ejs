@@ -1,14 +1,20 @@
 <%- include('../partials/head') %>
 
+
 <h1> Your Posts </h1>
 <% postings.forEach((posting) => { %>
-<div class="card mt-2" style="width: 18rem;">
-                    <div class="card-body">
-                        <%= posting.owner.username %>. Tag: <%= posting.category %>
-                      <h5 class="card-title"><%= posting.text %></h5>
-                      <a href="/posts/<%= posting._id %>">View Details</a>
-                    </div>
-                  </div>
+  <div class="div-con">
+
+    <div class="card mt-2" style="width: 18rem;">
+                        <div class="card-body">
+                          <%= posting.owner.username %>: 
+                          <a id="post" href="/posts/<%= posting._id %>"><h5 class="card-title"><%= posting.title %></h5></a>
+                          <h5 id="Category_"> Tag: <%= posting.category %></h5>
+                          <time datetime="<%= %>"></time>
+                        </div>
+                      </div>
+  </div>
                   <% }) %>
 
 <%- include('../partials/footer') %>
+

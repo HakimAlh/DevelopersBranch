@@ -4,14 +4,20 @@
   <h4>Welcome back, <%= user.username %>!</h4>
   <h1 id="Title">DevsBranch</h1>
   <h5 id="Subtitle"> "Talk is cheap. Show me the code" - Linus Torvalds</h5>
-  
+  <a id="btn2" href="/views/home">
+  <div id="Form">
+  <form id = "SignIn" action="/views/home">
+    <input type="submit" value="Forum"></button>
+</form>
+</a>
+<div id="Form">
   <% } else { %>
         <h1 id="Title">DevsBranch</h1>
         <h5 id="Subtitle"> "Talk is cheap. Show me the code" - Linus Torvalds</h5>
             <div id="Form">
                 <form id = "SignIn" action="/auth/sign-in">
                     <input type="submit" value="Sign-In"></button>
-                </form>
+                <div id="Form">
 
    
                 <form id = "Register" action="/auth/sign-up">

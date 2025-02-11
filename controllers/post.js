@@ -92,9 +92,11 @@ const abouthakim = (req, res) => {
     })
 }
 
-const homepage = (req, res) => {
+const homepage = async (req, res) => {
+    const postings = await Post.find({}).populate('owner')
     res.render('../views/home.ejs', {
-        title: 'DevsBranch: Main'
+        title: 'DevsBranch: Main',
+        postings
     })
 }
 

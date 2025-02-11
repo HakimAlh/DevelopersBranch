@@ -4,6 +4,7 @@
 
 body {
     margin: 0px;
+    padding: 0px;
     text-align: center;
     /* display: flex;
     flex-direction: column;
@@ -114,18 +115,47 @@ nav {
     }
    
         .card { 
-            display: flex;
-            justify-content: center;
-           border-color: beige;
-           width: 100vw;
+            /* display: flex;
+            justify-content: center; */
+           /* border-color: beige; */
+           min-width: 70%;
+           /* height: 200px; */
+           text-align: left;
         }
-        .card-body { 
+
+        .card-title { 
+            /* display: flex;
+            justify-content: center; */
+           /* border-color: beige; */
+           min-width: 70%;
+           /* height: 200px; */
+           text-align: left;
+        }
+
+
+         .div-con {
+            width: 100vw;
+            /* background-color: aqua; */
             display: flex;
             justify-content: center;
-            width: 100vw;
-            align-items: center;
+
          }
- 
+
+         .div-con:hover {
+            transition: all 2s;
+         }
+
+         #form {
+            display: flex;
+            justify-content: center;
+         }
+         #Category_ {
+            text-align: right;
+         }
+
+         #post {
+            color: black;
+         }
 
         #Signinto {
             margin-top: 60px;
@@ -140,4 +170,24 @@ nav {
 
         #AddPost {
             -webkit-text-stroke: 1px rgb(37, 37, 255); 
+        }
+
+        #btn2 {
+        text-decoration: none;
+        }
+
+        #Delete {
+            width: 80px;
+        }
+
+        #Edit {
+        }
+
+        .card mt-2_ {
+            width: 20px;
+        }
+
+        .div-con2 {
+            display: flex;
+            justify-content: center;
         }

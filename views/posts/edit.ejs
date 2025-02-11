@@ -5,6 +5,9 @@
 <div class="container">
 <form action="/posts/<%= user._id %>/<%= posting._id %>?_method=PUT" method="POST">
 
+    <label for="">Title: </label>
+    <textarea id="title" name="title">
+        </textarea>
     <label for="">Post: </label>
     <textarea id="text" name="text">
         </textarea>
@@ -19,6 +22,7 @@
         <option value="Java">Java</option>
         <option value="Any">Any</option>
     </select>
+    
     <!-- <select name="category2" id="category2" form="categoryform2">
         <option value="Disabled">-</option>
         <option value="Question">Question</option>
