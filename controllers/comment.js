@@ -1,12 +1,17 @@
-const Comment = require('../models/post')
+const Post = require('../models/post')
 
-const postAdd = async (req, res) => {
+const commentAdd = async (req, res) => {
     req.body.owner = req.session.user._id
-    const newComment = await Comment.create(req.body)
-    console.log(newComment)
-    res.redirect('/posts')
+    // find the post we are on
+    const post = await Post.findById(req.params.postingId)
+
+    await post.comments.push(req.body)
+
+    await post.save()
+    console.log(post)
+    res.redirect(`/posts/${post._id}`)
 }
 
 module.exports = {
-    Comment, postAdd
+    commentAdd
 }

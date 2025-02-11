@@ -6,7 +6,7 @@ const commentSchema = new mongoose.Schema({
         ref: 'User',
 
     }, 
-    comment: { 
+    body: { 
         type: String,
         required: true,
     },
@@ -28,12 +28,11 @@ const postSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
-    }
+    },
+    comments: [commentSchema]
 }, {timestamps: true})
 
 
 const Post = mongoose.model('Post', postSchema)
 
-const Comment = mongoose.model('Comment', commentSchema)
-
-module.exports = Post, Comment
+module.exports = Post

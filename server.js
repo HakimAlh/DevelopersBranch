@@ -57,20 +57,23 @@ app.post('/auth/sign-up', authCtrl.addUser)
 app.get('/auth/sign-in', authCtrl.signInForm)
 app.post('/auth/sign-in', authCtrl.signIn)
 app.get('/auth/sign-out', authCtrl.signOut)
+
 app.get('/views/home', postCtrl.homepage)
-app.get('/posts/new', postCtrl.posting)
 app.get('/posts/aboutHakim', postCtrl.abouthakim)
 app.get('/posts/about', postCtrl.about)
 app.get('/posts/faq', postCtrl.faq)
-// app.post('/posts', postCtrl.commentAdd)
-app.get('/posts/:postingId', postCtrl.detail)
+
+// PRIVATE - must be signed in
 app.use(isSignedIn)
-app.get('/posts/view', postCtrl.postList)
+app.get('/posts/new', postCtrl.posting)
 app.post('/posts', postCtrl.postAdd)
+app.get('/posts/view', postCtrl.postList)
+app.get('/posts/:postingId', postCtrl.detail)
 app.delete('/posts/:userId/:postingId', postCtrl.deletePost)
 app.get('/posts/:userId/:postingId/edit', postCtrl.editPost)
 app.post('/posts/:userId/:postingId/edit', postCtrl.editPost)
 app.put('/posts/:userId/:postingId', postCtrl.updatePost)
+app.post('/posts/:postingId/comments', commentCtrl.commentAdd)
 
 
 

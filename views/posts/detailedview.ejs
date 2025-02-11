@@ -2,7 +2,7 @@
 
 
 <h1> <%= posting.owner.username %>'s Post </h1>
-<h1 id= Comment>Comments</h1>
+<h1 id= "Comment">Comments</h1>
   <div class="div-con2">
 
     <div class="card mt-2_" style="width: 18rem;">
@@ -28,9 +28,9 @@
                           border: solid rgb(102, 102, 102);
                         }
                         </style>
-                      <form action="/posts" method="POST">
+                      <form action="/posts/<%= posting._id %>/comments" method="POST">
                         <div class="square">
-                          <textarea id="Comment_" name="comment">
+                          <textarea id="Comment_" name="body">
                             
                           </textarea>
                           <button id="PostBtn" type="submit">Send</button>
@@ -40,5 +40,3 @@
   </div>
 
 <%- include('../partials/footer') %>
-
-

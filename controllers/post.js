@@ -25,7 +25,7 @@ const postAdd = async (req, res) => {
     // console.log(req.body.owner)
     const newPost = await Post.create(req.body)
     // console.log(newPost)
-    res.redirect('/posts/view.ejs')
+    res.redirect('./posts/view')
 
     // try {
     //     req.body.owner = req.session.user._id
@@ -66,6 +66,7 @@ const postList = async (req, res) => {
         postings
     })
 }
+
 const detail = async (req, res) => {
     try {
         console.log('Detail: ', req.params.postingId)
@@ -118,10 +119,11 @@ const deletePost = async (req, res) => {
         console.log(posting)
         if (posting.owner.equals(req.params.userId)) {
             await posting.deleteOne()
-            res.redirect('/posts/view.ejs')
+            res.redirect('/posts/view')
         } else {
             res.send("You don't have permission to do that.")
         }
+        
 
     } catch (error) {
         console.log(error)
