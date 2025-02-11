@@ -73,10 +73,12 @@ const detail = async (req, res) => {
         const posting = await Post.findById(req.params.postingId).populate('owner')
         // console.log('Hi!')
         // console.log(posting)
+
         
         res.render('./posts/detailedview.ejs', {
             title: 'DevsBranch: Post',
-            posting
+            posting,
+            comments:posting.comments
         })
         
 

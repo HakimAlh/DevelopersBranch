@@ -17,6 +17,10 @@
                                <button id="Delete" type="submit" class="btn btn-danger">Delete</button>
                             </form>
                               <% } else { %>
+                                <%= posting.owner.username %>: 
+                          <%= posting.title %>
+                          <h5 id="Category_"> Tag: <%= posting.category %></h5>
+                          <h5 class="card-title"><%= posting.text %></h5>
                             <% } %>
                         </div>
                       </div>
@@ -28,6 +32,9 @@
                           border: solid rgb(102, 102, 102);
                         }
                         </style>
+                        <% comments.forEach((comment) => { %>
+                          <%= posting.owner.username %>: 
+                          <% }) %>
                       <form action="/posts/<%= posting._id %>/comments" method="POST">
                         <div class="square">
                           <textarea id="Comment_" name="body">
