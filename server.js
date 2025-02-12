@@ -63,11 +63,11 @@ app.get('/posts/about', postCtrl.about)
 app.get('/posts/faq', postCtrl.faq)
 
 // PRIVATE - must be signed in
-app.use(isSignedIn)
 app.get('/posts/new', postCtrl.posting)
 app.post('/posts', postCtrl.postAdd)
 app.get('/posts/view', postCtrl.postList)
 app.get('/posts/:postingId', postCtrl.detail)
+app.use(isSignedIn)
 app.delete('/posts/:userId/:postingId', postCtrl.deletePost)
 app.get('/posts/:userId/:postingId/edit', postCtrl.editPost)
 app.post('/posts/:userId/:postingId/edit', postCtrl.editPost)

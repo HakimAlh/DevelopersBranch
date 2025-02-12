@@ -14,7 +14,7 @@ const posting = (req, res) => {
 }
 
 const postList = async (req, res) => {
-    const postings = await Post.find().sort({createdAt: "desc"}).populate('owner')
+    const postings = await Post.find({owner: req.session.user._id}).sort({createdAt: "desc"}).populate('owner')
 
     res.render('./posts/view.ejs', {
         title: 'DevsBranch: Add Post',
@@ -37,7 +37,6 @@ const detail = async (req, res) => {
         
 
     } catch (error) {
-        console.log(error)
         res.redirect('/')
     }
 

@@ -15,61 +15,78 @@
       <h5 class="card-title"><%= posting.text %></h5>
     </div>
     
+<%if (user){%>
+  <% if (posting.owner._id.equals(user._id)) { %>
+    <a id="commentDropdown2" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Options
+    </a>
+      <ul class="dropdown-menu">
+        <a id="Edit" href="/posts/<%= user._id %>/<%= posting._id %>/edit" type="submit"><li>Edit</li></a>
+        <form action="/posts/<%= user._id %>/<%= posting._id %>?_method=DELETE" method="POST">
+          <a id="Delete" type="submit">Delete</a>
+        </form>
+      </ul>
+    </div>
+    
+<%}%>
 
 
+<h3 id="addComment">Add a comment</h3>
+<div id="commentColor">
+  <form action="/posts/<%= posting._id %>/comments" method="POST">
+    <textarea id="Comment_" name="body">
+    </textarea>
+    <button id="PostBtn" type="submit">Send</button>
+  </form>
+    <h1 id= "Comment">Comments</h1>
+    <% comments.forEach((comment) => { %>
+      
+      <% if (comment.owner._id.equals(user._id)) { %>
 
-    <% if (posting.owner._id.equals(user._id)) { %>
-      <a id="commentDropdown2" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      Options
-      </a>
-        <ul class="dropdown-menu">
-          <a id="Edit" href="/posts/<%= user._id %>/<%= posting._id %>/edit" type="submit"><li>Edit</li></a>
-          <form action="/posts/<%= user._id %>/<%= posting._id %>?_method=DELETE" method="POST">
+      <a id="commentDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <%= comment.owner.username %>
+    </a>
+    <ul class="dropdown-menu">
+      <a id="Edit" href="/posts/<%= user._id %>/<%= comment._id %>/edit" type="submit"><li>Edit</li></a>
+          <form action="/posts/<%= user._id %>/<%= comment._id %>?_method=DELETE" method="POST">
             <a id="Delete" type="submit">Delete</a>
           </form>
-        </ul>
-        
-     
-
-
-      </div>
-      <% } else { %>
-                          
-                            <% } %>
-    <h3 id="addComment">Add a comment</h3>
-    <div id="commentColor">
-      <form action="/posts/<%= posting._id %>/comments" method="POST">
-        <textarea id="Comment_" name="body">
-        </textarea>
-        <button id="PostBtn" type="submit">Send</button>
-      </form>
-      <h1 id= "Comment">Comments</h1>
-      <% comments.forEach((comment) => { %> <a id="commentDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <%= comment.owner.username %>
-      </a>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Delete Comment</a></li>
-        <li><a class="dropdown-item" href="#">Edit</a></li>
-      </ul>
-    <%= comment.body %> 
-        
-        
-        <div class="commentSent">
-    </div>
-    <% }) %>
-                        </div>
-                      </div>
-                 
+    </ul>
+    <%} else {%> 
+  <%= comment.owner.username %>
+  <%} %>
+  <br />
+   <%= comment.body %> 
+  
+  <div class="commentSent">
   </div>
+  <% }) %>
+
+
+
+  <% } else { %>
+    <div id="Spacing">
+    <h1 id= "Comment">Comments</h1>
+    <% comments.forEach((comment) => { %> 
+    <%= comment.owner.username %>:
+   
+   <%= comment.body %> 
+  
+  <div class="commentSent">
+  </div>
+</div>
+  
+  <% }) %>
+      <% } %>
+
+
+
+
+    
+    </div>
+    </div>
+    </div>
 
 <%- include('../partials/footer') %>
 
 
-                          <!-- <style>
-                            .square {
-                              height: 30vw;
-                              width: 25vw;
-                              background-color: white;
-                              border: solid rgb(102, 102, 102);
-                            }
-                            </style> -->
