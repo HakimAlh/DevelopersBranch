@@ -6,6 +6,9 @@ A community-driven forum for developers and even non-developers to share thought
 ## Links
 Try out my App ---> 
 
+My Trello Plans: 
+
+
 DevsBranch's Main Menu:
 
 
@@ -23,6 +26,9 @@ Note: This is browser zoomed out to show the full post.
 Embedded JavaScript, CSS, HTML, Mongoose, Express
 
 Database: MongoDB
+
+## External Sources used
+BootStrap
 
 ## Planned Future Enhancements
 To improve the UI and improve overall User experience. Adding more features which gives more options to User, allowing them to be more flexible. And adding groups or organization similar to Github's organization where users can follow and get along.
