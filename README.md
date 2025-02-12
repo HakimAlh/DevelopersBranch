@@ -35,6 +35,8 @@ BootStrap
 ## Planned Future Enhancements
 To improve the UI and improve overall User experience. Adding more features which gives more options to User, allowing them to be more flexible. And adding groups or organization similar to Github's organization where users can follow and get along.
 
+Also a Profile and Search feature as well as search filter feature to search for solutions you specifically want
+
 ## Why DevsBranch name?
 DevsBranch is named the way it is because just like GitHub's branches. We have branches of Developers, and we 'push' codes or solutions to other developers to 'pull'. It was named
 DevelopersBranch but I shortened it to DevsBranch.
