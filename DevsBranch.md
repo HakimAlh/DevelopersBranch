@@ -3,6 +3,8 @@
 ## Welcome to DevsBranch!
 A community-driven forum for developers and even non-developers to share thoughts about development and coding. A place where you can talk or ask questions related to coding languages. Problems that others may face to be the same as yours! It can be a place for solution or a place to share your amazing development! 
 
+It is a code forum that you can post and others can comment on what you posted.
+
 ## Links
 Try out my App ---> 
 
