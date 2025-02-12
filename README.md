@@ -32,7 +32,7 @@ Embedded JavaScript, CSS, HTML, Mongoose, Express
 Database: MongoDB
 
 ## External Sources used
-BootStrap
+BootStrap & Google Font
 
 ## Planned Future Enhancements
 To improve the UI and improve overall User experience. Adding more features which gives more options to User, allowing them to be more flexible. And adding groups or organization similar to Github's organization where users can follow and get along.
