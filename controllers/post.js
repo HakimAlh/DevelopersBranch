@@ -26,10 +26,9 @@ const postList = async (req, res) => {
 
 const detail = async (req, res) => {
     try {
-        console.log('Detail: ', req.params.postingId)
-        const posting = await Post.findById(req.params.postingId).populate('owner')
-        // console.log('Hi!')
-        // console.log(posting)
+        
+        const posting = await Post.findById(req.params.postingId).populate("owner").populate("comments.owner")
+     
 
         
         res.render('./posts/detailedview.ejs', {

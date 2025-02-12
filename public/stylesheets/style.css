@@ -210,4 +210,18 @@ nav {
 
         #addComment {
             margin-left: 50px;
+            margin-top: 10vw;
+        }
+        .commentSent {
+            font-size: 50px;
+            margin: 50px;
+        }
+
+        #ownerName {
+            font-size: 35px;
+            text-align: center;
+        }
+
+        #descriptionPost {
+            text-align: center;
         }

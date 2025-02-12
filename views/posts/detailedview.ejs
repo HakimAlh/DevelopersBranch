@@ -6,35 +6,39 @@
   
   <div class="card mt-2_" style="width: 18rem;">
     <div class="card-body">
+      <div id="ownerName">
       <%= posting.owner.username %>: 
       <%= posting.title %>
+    </div>
       <h5 id="Category_"> Tag: <%= posting.category %></h5>
+      <div id="descriptionPost">
       <h5 class="card-title"><%= posting.text %></h5>
-      <% if (posting.owner._id.equals(user._id)) { %>
+    </div>
+    
+    <% if (posting.owner._id.equals(user._id)) { %>
         <a id="Edit" href="/posts/<%= user._id %>/<%= posting._id %>/edit"><button id="editBtn" type="submit">Edit</button></a>
         <form action="/posts/<%= user._id %>/<%= posting._id %>?_method=DELETE" method="POST">
           <button id="Delete" type="submit" class="btn btn-danger">Delete</button>
         </form>
 
 
-        <h3 id="addComment">Add a comment</h3>
-        <div id="commentColor">
-          <form action="/posts/<%= posting._id %>/comments" method="POST">
-            <textarea id="Comment_" name="body">
-            </textarea>
-            <button id="PostBtn" type="submit">Send</button>
-          </form>
-          <h1 id= "Comment">Comments</h1>
-          <% comments.forEach((comment) => { %>
-            <%= posting.owner.username %>: <%= comment.body %>
-            <div class="commentSent">
-        </div>
-        
-        <% }) %>
-        </div>
-        <% } else { %>
+      </div>
+      <% } else { %>
                           
                             <% } %>
+    <h3 id="addComment">Add a comment</h3>
+    <div id="commentColor">
+      <form action="/posts/<%= posting._id %>/comments" method="POST">
+        <textarea id="Comment_" name="body">
+        </textarea>
+        <button id="PostBtn" type="submit">Send</button>
+      </form>
+      <h1 id= "Comment">Comments</h1>
+      <% comments.forEach((comment) => { %>
+        <%= comment.owner.username %>: <%= comment.body %>
+        <div class="commentSent">
+    </div>
+    <% }) %>
                         </div>
                       </div>
                  
