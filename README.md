@@ -6,7 +6,7 @@ A community-driven forum for developers and even non-developers to share thought
 ## Links
 Try out my App ---> 
 
-My Trello Plans: 
+My Trello Plans: https://trello.com/b/pRI3sF4n/project-2-plan
 
 
 DevsBranch's Main Menu:
