@@ -34,8 +34,16 @@
         <button id="PostBtn" type="submit">Send</button>
       </form>
       <h1 id= "Comment">Comments</h1>
-      <% comments.forEach((comment) => { %>
-        <%= comment.owner.username %>: <%= comment.body %>
+      <% comments.forEach((comment) => { %> <a id="commentDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <%= comment.owner.username %>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Delete Comment</a></li>
+        <li><a class="dropdown-item" href="#">Edit</a></li>
+      </ul>
+    <%= comment.body %> 
+        
+        
         <div class="commentSent">
     </div>
     <% }) %>
