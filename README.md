@@ -15,9 +15,8 @@ Try out my App --->
 My Trello Plans: https://trello.com/b/pRI3sF4n/project-2-plan
 
 
-DevsBranch's Main Menu:
 
-
+## Main Menu (Logged in)
 ![DevsBranch Main Menu (Logged In)](https://github.com/user-attachments/assets/0e315b8a-397d-4a91-aebe-7daf47f4bfc9)
 
 
