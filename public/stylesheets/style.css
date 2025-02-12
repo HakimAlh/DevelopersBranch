@@ -225,6 +225,17 @@ nav {
         #descriptionPost {
             text-align: center;
         }
-        #commentDropdown {
-            
+        #commentDropdown2 {
+        font-size: 20px;
+        color: gray;
+        }
+        #Edit {
+            color: black;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        #Delete {
+            color: black;
+            text-decoration: none;
+            margin-left: 10px;
         }

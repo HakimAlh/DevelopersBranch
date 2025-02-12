@@ -15,11 +15,21 @@
       <h5 class="card-title"><%= posting.text %></h5>
     </div>
     
+
+
+
     <% if (posting.owner._id.equals(user._id)) { %>
-        <a id="Edit" href="/posts/<%= user._id %>/<%= posting._id %>/edit"><button id="editBtn" type="submit">Edit</button></a>
-        <form action="/posts/<%= user._id %>/<%= posting._id %>?_method=DELETE" method="POST">
-          <button id="Delete" type="submit" class="btn btn-danger">Delete</button>
-        </form>
+      <a id="commentDropdown2" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Options
+      </a>
+        <ul class="dropdown-menu">
+          <a id="Edit" href="/posts/<%= user._id %>/<%= posting._id %>/edit" type="submit"><li>Edit</li></a>
+          <form action="/posts/<%= user._id %>/<%= posting._id %>?_method=DELETE" method="POST">
+            <a id="Delete" type="submit">Delete</a>
+          </form>
+        </ul>
+        
+     
 
 
       </div>
