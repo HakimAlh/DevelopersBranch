@@ -202,6 +202,10 @@ nav {
         #PostBtn {
             width: 50px;
         }
+        #PostBtn:hover {
+            color: gray;
+            
+        }
 
         #commentColor {
             color: black;
@@ -225,17 +229,31 @@ nav {
         #descriptionPost {
             text-align: center;
         }
+        #commentDropdown:hover {
+            color: gray;
+        }
         #commentDropdown2 {
         font-size: 20px;
-        color: gray;
+        color: rgb(0, 0, 0);
         }
+        #commentDropdown2:hover {
+            font-size: 20px;
+            color: gray;
+            }
         #Edit {
             color: black;
             text-decoration: none;
             margin-left: 10px;
+            
         }
         #Delete {
             color: black;
             text-decoration: none;
             margin-left: 10px;
+        }
+        #Edit:hover {
+            color: rgb(124, 124, 124);
+        }
+        #Delete:hover {
+            color: rgb(124, 124, 124);
         }
