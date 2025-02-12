@@ -205,3 +205,8 @@ nav {
             margin-left: 10px; 
             margin-left: 15px;  
         }
+
+        #commentColor {
+            color: black;
+            margin-left: 50px;
+        }

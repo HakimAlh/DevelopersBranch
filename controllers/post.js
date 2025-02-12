@@ -60,6 +60,7 @@ const posting = (req, res) => {
 
 const postList = async (req, res) => {
     const postings = await Post.find().populate('owner')
+    req.body.owner = req.session.user._id
 
     res.render('./posts/view.ejs', {
         title: 'DevsBranch: Add Post',

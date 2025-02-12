@@ -57,7 +57,6 @@ app.post('/auth/sign-up', authCtrl.addUser)
 app.get('/auth/sign-in', authCtrl.signInForm)
 app.post('/auth/sign-in', authCtrl.signIn)
 app.get('/auth/sign-out', authCtrl.signOut)
-
 app.get('/views/home', postCtrl.homepage)
 app.get('/posts/aboutHakim', postCtrl.abouthakim)
 app.get('/posts/about', postCtrl.about)
