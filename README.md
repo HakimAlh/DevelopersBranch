@@ -32,6 +32,6 @@ DevsBranch is named the way it is because just like GitHub's branches. We have b
 DevelopersBranch but I shortened it to DevsBranch.
 
 ## Why did you choose this kind of app for the project?
-Because I see how a lot of developers use websites such as 'Stack OverFlow' and I take inspiration. I love to work on something that'll benefit other developers and even non-developers. Sharing their thoughts and sharing problems others can help solving brings a really nice community. Which is why I chose to go with something with the inspiration of a 'Coding Forum'
+Because I see how a lot of developers use websites such as 'Stack Overflow' and I take inspiration. I love to work on something that'll benefit other developers and even non-developers. Sharing their thoughts and sharing problems others can help solving brings a really nice community. Which is why I chose to go with something with the inspiration of a 'Coding Forum'
 
 
