@@ -68,12 +68,12 @@ app.post('/posts', postCtrl.postAdd)
 app.get('/posts/view', postCtrl.postList)
 app.get('/posts/:postingId', postCtrl.detail)
 app.use(isSignedIn)
-app.delete('/posts/:userId/:postingId', postCtrl.deletePost)
 app.get('/posts/:userId/:postingId/edit', postCtrl.editPost)
 app.post('/posts/:userId/:postingId/edit', postCtrl.editPost)
 app.put('/posts/:userId/:postingId', postCtrl.updatePost)
 app.post('/posts/:postingId/comments', commentCtrl.commentAdd)
-app.delete('/posts/:userId/:commentId', commentCtrl.commentDelete)
+app.delete('/posts/:userId/:postingId/comments/:commentId', commentCtrl.commentDelete)
+app.delete('/posts/:userId/:postingId', postCtrl.deletePost)
 
 
 

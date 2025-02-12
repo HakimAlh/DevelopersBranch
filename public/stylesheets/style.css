@@ -253,7 +253,7 @@ nav {
         #Delete {
             color: black;
             text-decoration: none;
-            margin-left: 10px;
+            font-size: 25px;
         }
         #Edit:hover {
             color: rgb(124, 124, 124);

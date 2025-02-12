@@ -14,9 +14,14 @@ const commentAdd = async (req, res) => {
 
 const commentDelete = async (req, res) => {
     try {
-        const comment = await Post.findById(req.params.commentId)
-        if (comment.owner.equals(req.params.userId)) {
-            await comment.deleteOne()
+        const posting = await Post.findById(req.params.postingId)
+        const comment = posting.comments.find(function (comment) {
+            return comment._id === req.params.commentId 
+          })
+        console.log(comment)
+        if (posting.owner.equals(req.params.userId)) {
+             posting.comments.remove({ _id: req.params.commentId });
+             await posting.save();
             res.redirect('/posts/detailedview')
         } else {
             res.send("You don't have permission to do that.")
@@ -28,6 +33,7 @@ const commentDelete = async (req, res) => {
         res.redirect('/')
     }
 }
+
 
 module.exports = {
     commentAdd,

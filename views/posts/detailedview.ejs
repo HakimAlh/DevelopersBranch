@@ -23,8 +23,8 @@
       <ul class="dropdown-menu">
         <a id="Edit" href="/posts/<%= user._id %>/<%= posting._id %>/edit" type="submit"><li>Edit</li></a>
         <form action="/posts/<%= user._id %>/<%= posting._id %>?_method=DELETE" method="POST">
-          <a id="Delete" type="submit">Delete</a>
-        </form>
+          <button id="Delete"type="submit">Delete</button>
+       </form>
       </ul>
     </div>
     
@@ -44,19 +44,19 @@
       <% if (comment.owner._id.equals(user._id)) { %>
 
       <a id="commentDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    <%= comment.owner.username %>
+    <%= comment.owner.username %>:
     </a>
     <ul class="dropdown-menu">
       <a id="Edit" href="/posts/<%= user._id %>/<%= comment._id %>" type="submit"><li>Edit</li></a>
-          <form action="/posts/<%= user._id %>/<%= comment._id %>?_method=DELETE" method="POST">
-            <a id="Delete" type="submit">Delete</a>
-          </form>
+      <form action="/posts/<%= user._id %>/<%= posting._id %>/comments/<%= comment._id %> ?_method=DELETE" method="POST">
+        <button id="btnBtn"type="submit">Delete</button>
+     </form>
     </ul>
     <%} else {%> 
-      <%= comment.owner.username %>
+      <%= comment.owner.username %>:
       <%} %>
-      <br />
       <%= comment.body %> 
+      <br />
      
   
   <div class="commentSent">
