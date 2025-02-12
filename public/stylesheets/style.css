@@ -247,6 +247,7 @@ nav {
             color: rgb(124, 124, 124);
         }
 
-        /* #postEdit {
-            
-        } */
+        .aboutText {
+            font-size: 30px;
+            -webkit-text-stroke: 1px rgb(0, 0, 0); 
+        }

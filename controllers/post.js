@@ -57,7 +57,7 @@ const homepage = async (req, res) => {
 }
 
 const about = (req, res) => {
-    res.render('./views/about.ejs', {
+    res.render('../views/about.ejs', {
         title: 'DevsBranch: About'
     })
 }
