@@ -3,7 +3,7 @@ const Post = require('../models/post')
 const commentAdd = async (req, res) => {
     req.body.owner = req.session.user._id
     // find the post we are on
-    const post = await Post.findById(req.params.postingId).populate('owner')
+    const post = await Post.findById(req.params.postingId).sort({createdAt: "desc"}).populate('owner')
 
     await post.comments.push(req.body)
 

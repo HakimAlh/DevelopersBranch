@@ -6,11 +6,10 @@
 <form action="/posts/<%= user._id %>/<%= posting._id %>?_method=PUT" method="POST">
 
     <label for="">Title: </label>
-    <textarea id="title" name="title">
-        </textarea>
-    <label for="">Post: </label>
-    <textarea id="text" name="text">
-        </textarea>
+    <input type="text" id="title" name="title" value="<%=posting.title%>">
+    <label for="" id="postEdit">Post: </label>
+    <input type="text" id="text" name="text" value="<%=posting.text%>">
+
     <label for="category">Category:</label>
     <select name="category" id="category">
         <option value="Disabled" selected disabled>-</option>
@@ -23,12 +22,6 @@
         <option value="Any">Any</option>
     </select>
     
-    <!-- <select name="category2" id="category2" form="categoryform2">
-        <option value="Disabled">-</option>
-        <option value="Question">Question</option>
-        <option value="Help Needed">Help Needed</option>
-        <option value="Sharing">Sharing</option>
-       </select> -->
     <button type="submit">Edit your post</button>
 </form>
 </div>
