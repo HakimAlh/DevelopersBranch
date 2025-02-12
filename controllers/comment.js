@@ -12,6 +12,24 @@ const commentAdd = async (req, res) => {
     res.redirect(`/posts/${post._id}`)
 }
 
+const commentDelete = async (req, res) => {
+    try {
+        const comment = await Post.findById(req.params.commentId)
+        if (comment.owner.equals(req.params.userId)) {
+            await comment.deleteOne()
+            res.redirect('/posts/detailedview')
+        } else {
+            res.send("You don't have permission to do that.")
+        }
+        
+
+    } catch (error) {
+        console.log(error)
+        res.redirect('/')
+    }
+}
+
 module.exports = {
-    commentAdd
+    commentAdd,
+    commentDelete,
 }

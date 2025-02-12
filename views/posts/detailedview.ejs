@@ -47,19 +47,26 @@
     <%= comment.owner.username %>
     </a>
     <ul class="dropdown-menu">
-      <a id="Edit" href="/posts/<%= user._id %>/<%= comment._id %>/edit" type="submit"><li>Edit</li></a>
+      <a id="Edit" href="/posts/<%= user._id %>/<%= comment._id %>" type="submit"><li>Edit</li></a>
           <form action="/posts/<%= user._id %>/<%= comment._id %>?_method=DELETE" method="POST">
             <a id="Delete" type="submit">Delete</a>
           </form>
     </ul>
     <%} else {%> 
-  <%= comment.owner.username %>
-  <%} %>
-  <br />
-   <%= comment.body %> 
+      <%= comment.owner.username %>
+      <%} %>
+      <br />
+      <%= comment.body %> 
+     
   
   <div class="commentSent">
   </div>
+  <a id="commentDropdown3" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  </a>
+  <ul class="dropdown-menu">
+    <a id="Edit" href="/posts/<%= user._id %>/<%= comment._id %>" type="submit"><li>Reply</li>
+        </form>
+  </ul>
   <% }) %>
 
 

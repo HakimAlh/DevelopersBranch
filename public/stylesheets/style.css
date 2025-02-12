@@ -240,6 +240,10 @@ nav {
             font-size: 20px;
             color: gray;
             }
+
+            #commentDropdown3 {
+                margin-top: -45px;  
+                }
         #Edit {
             color: black;
             text-decoration: none;
