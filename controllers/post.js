@@ -16,7 +16,7 @@ const posting = (req, res) => {
 }
 
 const postList = async (req, res) => {
-    const postings = await Post.find().populate('owner')
+    const postings = await Post.find().sort({createdAt: "desc"}).populate('owner')
 
     res.render('./posts/view.ejs', {
         title: 'DevsBranch: Add Post',

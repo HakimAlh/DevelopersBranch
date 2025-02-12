@@ -2,49 +2,52 @@
 
 
 <h1> <%= posting.owner.username %>'s Post </h1>
-<h1 id= "Comment">Comments</h1>
-  <div class="div-con2">
+<div class="div-con2">
+  
+  <div class="card mt-2_" style="width: 18rem;">
+    <div class="card-body">
+      <%= posting.owner.username %>: 
+      <%= posting.title %>
+      <h5 id="Category_"> Tag: <%= posting.category %></h5>
+      <h5 class="card-title"><%= posting.text %></h5>
+      <% if (posting.owner._id.equals(user._id)) { %>
+        <a id="Edit" href="/posts/<%= user._id %>/<%= posting._id %>/edit"><button id="editBtn" type="submit">Edit</button></a>
+        <form action="/posts/<%= user._id %>/<%= posting._id %>?_method=DELETE" method="POST">
+          <button id="Delete" type="submit" class="btn btn-danger">Delete</button>
+        </form>
 
-    <div class="card mt-2_" style="width: 18rem;">
-                        <div class="card-body">
-                          <%= posting.owner.username %>: 
-                          <%= posting.title %>
-                          <h5 id="Category_"> Tag: <%= posting.category %></h5>
-                          <h5 class="card-title"><%= posting.text %></h5>
-                          <% if (posting.owner._id.equals(user._id)) { %>
-                            <a id="Edit" href="/posts/<%= user._id %>/<%= posting._id %>/edit"><button id="editBtn" type="submit">Edit</button></a>
-                            <form action="/posts/<%= user._id %>/<%= posting._id %>?_method=DELETE" method="POST">
-                               <button id="Delete" type="submit" class="btn btn-danger">Delete</button>
-                            </form>
-                              <% } else { %>
+
+        <h3 id="addComment">Add a comment</h3>
+        <div id="commentColor">
+          <form action="/posts/<%= posting._id %>/comments" method="POST">
+            <textarea id="Comment_" name="body">
+            </textarea>
+            <button id="PostBtn" type="submit">Send</button>
+          </form>
+          <h1 id= "Comment">Comments</h1>
+          <% comments.forEach((comment) => { %>
+            <%= posting.owner.username %>: <%= comment.body %>
+            <div class="commentSent">
+        </div>
+        
+        <% }) %>
+        </div>
+        <% } else { %>
                           
                             <% } %>
                         </div>
-                      </div>
-                      <div id="commentColor">
-                      <% comments.forEach((comment) => { %>
-                        <%= posting.owner.username %>: <%= comment.body %>
-                      </div>
-                      <style>
-                        .square {
-                          height: 30vw;
-                          width: 25vw;
-                          background-color: white;
-                          border: solid rgb(102, 102, 102);
-                        }
-                        </style>
-
-                          <% }) %>
-                      <form action="/posts/<%= posting._id %>/comments" method="POST">
-                        <div class="square">
-                          <textarea id="Comment_" name="body">
-                            
-                          </textarea>
-                          <button id="PostBtn" type="submit">Send</button>
-                      </form>
                       </div>
                  
   </div>
 
 <%- include('../partials/footer') %>
 
+
+                          <!-- <style>
+                            .square {
+                              height: 30vw;
+                              width: 25vw;
+                              background-color: white;
+                              border: solid rgb(102, 102, 102);
+                            }
+                            </style> -->

@@ -192,21 +192,22 @@ nav {
             justify-content: center;
         }
         #Comment {
-            text-align: right;
-            margin-right: 125px;
+            text-align: left;
+
         }
 
         #Comment_ {
-            margin-top: 330px; 
-            margin-left: 25px;  
+        width: 300px;
         }
         #PostBtn {
-            margin-top: -60px;
-            margin-left: 10px; 
-            margin-left: 15px;  
+            width: 50px;
         }
 
         #commentColor {
             color: black;
+            margin-left: 50px;
+        }
+
+        #addComment {
             margin-left: 50px;
         }
