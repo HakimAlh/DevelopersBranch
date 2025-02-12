@@ -39,7 +39,7 @@ To improve the UI and improve overall User experience. Adding more features whic
 
 Also a Profile and Search feature as well as search filter feature to search for solutions you specifically want.
 
-## Why DevsBranch name?
+## Why is it named DevsBranch?
 DevsBranch is named the way it is because just like GitHub's branches. We have branches of Developers, and we 'push' codes or solutions to other developers to 'pull'. It was named
 DevelopersBranch but I shortened it to DevsBranch.
 
