@@ -2,9 +2,7 @@ const Post = require('../models/post')
 
 const postAdd = async (req, res) => {
     req.body.owner = req.session.user._id
-    // console.log(req.body.owner)
     const newPost = await Post.create(req.body)
-    // console.log(newPost)
     res.redirect('./posts/view')
 
 }
@@ -52,7 +50,7 @@ const abouthakim = (req, res) => {
 }
 
 const homepage = async (req, res) => {
-    const postings = await Post.find({}).populate('owner')
+    const postings = await Post.find({}).sort({createdAt: "desc"}).populate('owner')
     res.render('../views/home.ejs', {
         title: 'DevsBranch: Main',
         postings
@@ -126,7 +124,6 @@ const updatePost = async (req, res) => {
 module.exports = {
     postAdd,
     posting,
-    // main,
     homepage,
     postList,
     detail,
