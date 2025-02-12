@@ -21,6 +21,7 @@ Note: This is browser zoomed out to show the full post.
 
 ## Code Languages Used
 Embedded JavaScript, CSS, HTML, Mongoose, Express
+
 Database: MongoDB
 
 ## Planned Future Enhancements
