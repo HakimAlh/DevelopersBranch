@@ -11,6 +11,8 @@ It is a code forum that you can post and others can comment on what you posted.
 ## Links
 Try out my App ---> https://devsbranch-8331c0bde586.herokuapp.com/
 
+Note: Better experience in PC/Laptop (Mobile isn't optimized)
+
 My Trello Plans: https://trello.com/b/pRI3sF4n/project-2-plan
 
 
