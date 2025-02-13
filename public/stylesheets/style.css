@@ -255,3 +255,9 @@ nav {
             margin-left: 50px;
             color: gray;
         }
+        h1 {
+            -webkit-text-stroke: 1px rgb(0, 0, 0); 
+        }
+        h4 {
+            -webkit-text-stroke: 1px rgb(0, 0, 0); 
+        }
